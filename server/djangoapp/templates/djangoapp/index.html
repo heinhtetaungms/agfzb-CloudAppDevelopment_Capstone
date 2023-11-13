@@ -38,7 +38,7 @@
                         <span class="navbar-text mr-3">Welcome, {{ user.first_name|default:user.username }}</span>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'djangoapp:log %}" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
+                        <a href="{% url 'djangoapp:logout' %}" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
                     </li>
                 {% else %}
                     <!-- Display when user is not authenticated -->
@@ -49,7 +49,7 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
                     </form>
                     <li class="nav-item">
-                        <a href="{% url 'djangoapp:signup' %}" class="btn btn-outline-primary my-2 my-sm-0">Signup</a>
+                        <a href="{% url 'djangoapp:registration' %}" class="btn btn-outline-primary my-2 my-sm-0">Signup</a>
                     </li>
                 {% endif %}
             </ul>
