@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-    <body>
-    <!--Add a registration form here -->
-    </body>
+<body>
+    <div class="container">
+        <form action="{% url 'djangoapp:registration' %}" method="post">
+            <h1>Sign Up</h1>
+            <hr>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" placeholder="Enter User Name" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="psw">Password</label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+            </div>
+            {% csrf_token %}
+            <button class="btn btn-primary button" type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
 </html>
